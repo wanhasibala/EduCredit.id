@@ -1,14 +1,12 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import ProfilePicture from "../components/ProfilePicture";
+import HeaderTitle from "../components/HeaderTitle";
 
 function Home() {
     return (
         <View style={styles.container}>
             <View style={styles.HeaderContainer} >
-                <View style={styles.titleHeader} >
-                    <Text style={styles.HeaderText} >Home</Text>
-                    <ProfilePicture />
-                </View>
+                <HeaderTitle title={'Home'}/>
                 <TextInput style={styles.TextInput} />
             </View>
             <View style={styles.bodyContainer} >
@@ -25,19 +23,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
     },
-    titleHeader:{
-        flexDirection: 'row',
-        alignItems: 'top',
-        justifyContent: 'space-between',
-    },
-    HeaderText: {
-        fontSize: 24,
-    },
     HeaderContainer: {
         flex: 1,
         marginTop: 20,
         padding: 24,
-        // backgroundColor: 'blue',
         justifyContent:'space-between'
     },
     TextInput:{
