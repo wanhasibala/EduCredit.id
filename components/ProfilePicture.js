@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     PictureContainer:{
         height: 48,
         width: 48,
-        borderWidth: 2,
         borderRadius: 24,
         alignItems:'center',
         justifyContent: 'center',

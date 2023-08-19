@@ -1,9 +1,10 @@
 import { StyleSheet,View, Text, } from "react-native";
 import ProfilePicture from './ProfilePicture';
+import FontSize from "../constant/fontSize";
 
-function HeaderTitle(props) {
+function HeaderTitle({children}) {
     return <View style={styles.titleHeader} >
-        <Text style={styles.HeaderText} >{props.title}</Text>
+        <Text style={styles.HeaderText} >{children}</Text>
         <ProfilePicture />
     </View>
 }
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     HeaderText: {
-        fontSize: 24,
+        fontSize: FontSize.HeadingMedium,
         fontWeight:'bold',
     },
 });
