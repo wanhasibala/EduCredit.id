@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'top',
         justifyContent: 'space-between',
+        marginBottom: 40,
     },
     HeaderText: {
         fontSize: FontSize.HeadingMedium,

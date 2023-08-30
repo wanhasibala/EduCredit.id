@@ -1,5 +1,5 @@
 import {
-    FlatList,
+  FlatList,
   Image,
   ScrollView,
   StyleSheet,
@@ -12,38 +12,58 @@ import FontSize from "../constant/fontSize";
 import Colors from "../constant/color";
 import Shortcut from "../components/Shortcut";
 import Filter from "../components/filter";
+import Card from "../components/card";
 
 function Home() {
+
+  function renderCardItem(){
+    return <Card />
+  }
   return (
     <View style={styles.container}>
       <View style={styles.HeaderContainer}>
         <HeaderTitle children={"Home"}></HeaderTitle>
         <TextInput style={styles.TextInput} placeholder="Pencarian" />
       </View>
-      <View style={styles.bodyContainer}>
+      <ScrollView style={styles.bodyContainer}>
         <Text style={styles.bodyText}>Penggunaan</Text>
         <View style={styles.shortcutContainer}>
-          <Shortcut title={"Pembuatan akun"} icons='card-outline' size={24} ></Shortcut>
-          <Shortcut title={"Aktivitas & riwayat"} icons='logo-euro' size={12}></Shortcut>
-          <Shortcut title={"Cicilan"}></Shortcut>
+          <Shortcut
+            title={"Pembuatan akun"}
+            icons="card-outline"
+            size={24}
+          ></Shortcut>
+          <Shortcut
+            title={"Aktivitas & riwayat"}
+            icons="logo-euro"
+            size={20}
+          ></Shortcut>
+          <Shortcut
+            title={"Cicilan"}
+            icons="clipboard-outline"
+            size={24}
+          ></Shortcut>
         </View>
-        <View style={styles.banner}></View>
+        <Image
+          source={require("../assets/images/banner1.png")}
+          style={styles.image}
+        />
         <View style={styles.titleContainer}>
           <Text style={styles.bodyText}>Penggunaan</Text>
           <Text>Lihat semua</Text>
         </View>
         <View>
-          <ScrollView horizontal={true} >
-            <Filter title={"popular "}></Filter>
-            <Filter title={"popular "}></Filter>
-            <Filter title={"popular "}></Filter>
-            <Filter title={"popular "}></Filter>
+          <ScrollView horizontal={true}>
+            <Filter title={"Popular "} icons={'book-outline'}></Filter>
+            <Filter title={"Lembaga"} icons={'business-outline'}></Filter>
+            <Filter title={"Voucher"} icons={'ticket-outline'}></Filter>
+            <Filter title={"Pinjaman"} icons={'card'}></Filter>
+            <Filter title={"Lainnya"} icons={'logo-tableau'}></Filter>
           </ScrollView>
-          <FlatList >
-
-          </FlatList>
+          <Card></Card>
+          {/* <FlatList></FlatList> */}
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -55,7 +75,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   HeaderContainer: {
-    flex: 1,
+    // flex: 1,
     marginTop: 20,
     padding: 24,
     justifyContent: "space-between",
@@ -66,7 +86,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   bodyContainer: {
-    flex: 3,
+    flex: 8,
     padding: 24,
     flexDirection: "column",
     backgroundColor: "white",
@@ -80,8 +100,9 @@ const styles = StyleSheet.create({
   },
   shortcutContainer: {
     flexDirection: "row",
-    direction: "ltr",
     gap: 10,
+    marginBottom: 20,
+    justifyContent: "center",
   },
   banner: {
     height: 120,
