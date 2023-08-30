@@ -1,11 +1,12 @@
 import { View,Text,StyleSheet, Image } from "react-native";
 import Colors from "../constant/color";
+import {Ionicons} from '@expo/vector-icons';
 
 function Shortcut(props) {
     return (
         <View style={styles.shortcutIcon}>
             <View style={styles.imageContainer}>
-                <Image source={require("../assets/icons/credit-card.png")}></Image>
+                <Ionicons name={props.icons} size={props.size}/>
             </View>
             <Text style={styles.shorcutText}>{props.title}</Text>
         </View>
