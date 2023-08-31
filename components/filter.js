@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
         gap: 5,
         alignItems: 'flex-start',
         marginRight: 5,
+        marginBottom: 10,
     }
 });

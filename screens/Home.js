@@ -15,9 +15,8 @@ import Filter from "../components/filter";
 import Card from "../components/card";
 
 function Home() {
-
-  function renderCardItem(){
-    return <Card />
+  function renderCardItem() {
+    return <Card />;
   }
   return (
     <View style={styles.container}>
@@ -49,19 +48,19 @@ function Home() {
           style={styles.image}
         />
         <View style={styles.titleContainer}>
-          <Text style={styles.bodyText}>Penggunaan</Text>
+          <Text style={styles.bodyText}>Popular</Text>
           <Text>Lihat semua</Text>
         </View>
         <View>
           <ScrollView horizontal={true}>
-            <Filter title={"Popular "} icons={'book-outline'}></Filter>
-            <Filter title={"Lembaga"} icons={'business-outline'}></Filter>
-            <Filter title={"Voucher"} icons={'ticket-outline'}></Filter>
-            <Filter title={"Pinjaman"} icons={'card'}></Filter>
-            <Filter title={"Lainnya"} icons={'logo-tableau'}></Filter>
+            <Filter title={"Popular "} icons={"book-outline"}></Filter>
+            <Filter title={"Lembaga"} icons={"business-outline"}></Filter>
+            <Filter title={"Voucher"} icons={"cash"}></Filter>
+            <Filter title={"Pinjaman"} icons={"card"}></Filter>
+            <Filter title={"Lainnya"} icons={"grid-outline"}></Filter>
           </ScrollView>
           <Card></Card>
-          {/* <FlatList></FlatList> */}
+          <Card></Card>
         </View>
       </ScrollView>
     </View>
@@ -86,7 +85,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   bodyContainer: {
-    flex: 8,
     padding: 24,
     flexDirection: "column",
     backgroundColor: "white",
