@@ -13,11 +13,12 @@ import Colors from "../constant/color";
 import Shortcut from "../components/Shortcut";
 import Filter from "../components/filter";
 import Card from "../components/card";
+import CardContainer from "../components/cardContainer";
 
 function Home() {
-  function renderCardItem() {
-    return <Card />;
-  }
+  // function renderCardItem() {
+  //   return <Card />;
+  // }
   return (
     <View style={styles.container}>
       <View style={styles.HeaderContainer}>
@@ -43,24 +44,22 @@ function Home() {
             size={24}
           ></Shortcut>
         </View>
+
+        {/* BANNER */}
+
         <Image
           source={require("../assets/images/banner1.png")}
-          style={styles.image}
+          style={styles.banner}
         />
+
+        {/* main content */}
+
         <View style={styles.titleContainer}>
           <Text style={styles.bodyText}>Popular</Text>
           <Text>Lihat semua</Text>
         </View>
         <View>
-          <ScrollView horizontal={true}>
-            <Filter title={"Popular "} icons={"book-outline"}></Filter>
-            <Filter title={"Lembaga"} icons={"business-outline"}></Filter>
-            <Filter title={"Voucher"} icons={"cash"}></Filter>
-            <Filter title={"Pinjaman"} icons={"card"}></Filter>
-            <Filter title={"Lainnya"} icons={"grid-outline"}></Filter>
-          </ScrollView>
-          <Card></Card>
-          <Card></Card>
+          <Filter />
         </View>
       </ScrollView>
     </View>
@@ -103,10 +102,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   banner: {
-    height: 120,
-    backgroundColor: "yellow",
+    width: "100%",
+    height: 140,
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   titleContainer: {
     flexDirection: "row",

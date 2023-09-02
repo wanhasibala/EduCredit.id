@@ -1,18 +1,19 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-function Card() {
+function Card({ title, imageUrl, date, mitra, name }) {
   return (
     <View style={styles.cardContainer}>
-      <Image
-        source={require("../assets/images/ilustrasi1.png")}
-        style={styles.imageContainer}
-      />
-      <View style={styles.topDetailContainer}>
-        <Text style={styles.topDetail}>1 Januari 2023</Text>
-        <Text style={styles.topDetail}>MyEduSolve</Text>
-      </View>
-      <Text style={styles.titleCourse}>Animasi 3D with Blender</Text>
-      <Text style={styles.nameCourse}>Hanansyah Abigail</Text>
+        <Image
+          source={require("../assets/images/ilustrasi1.png")}
+          style={styles.imageContainer}
+        />
+        <View style={styles.topDetailContainer}>
+          <Text style={styles.topDetail}>{date}</Text>
+          <Text style={styles.topDetail}>{mitra}</Text>
+        </View>
+        <Text style={styles.titleCourse}>{title}</Text>
+        <Text style={styles.nameCourse}>{name}</Text>
     </View>
   );
 }
@@ -39,14 +40,14 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   topDetail: {
-    color: '#9e9e9e',
+    color: "#9e9e9e",
     fontSize: 12,
   },
-  titleCourse:{
+  titleCourse: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-  nameCourse:{
-    color: '#616161'
-  }
+  nameCourse: {
+    color: "#616161",
+  },
 });
