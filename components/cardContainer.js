@@ -3,7 +3,8 @@ import Card from "./card";
 import { COURSES } from "../data & models/data";
 
 function CardContainer() {
-  function renderCourseItem(itemData) {
+  function renderCourseItem(itemData)
+   {
     return (
       <Card
         imageUrl={itemData.item.imageUrl}
@@ -11,6 +12,7 @@ function CardContainer() {
         date={itemData.item.date}
         name={itemData.item.name}
         mitra={itemData.item.mitra}
+        id={itemData.item.id}
       />
     );
   }

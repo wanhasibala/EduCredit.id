@@ -1,16 +1,27 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-function Card({ title, imageUrl, date, mitra, name }) {
+function Card({ title, imageUrl, date, mitra, name, id }) {
+  const navigation = useNavigation();
+
+  function selectedCourseItemHandler() {
+    navigation.navigate("CourseDetail", { courseId: id});
+  }
   return (
     <View style={styles.cardContainer}>
-      <Image source={{ uri: imageUrl }} style={styles.image} resizeMode="cover" />
-      <View style={styles.topDetailContainer}>
-        <Text style={styles.topDetail}>{date}</Text>
-        <Text style={styles.topDetail}>{mitra}</Text>
-      </View>
-      <Text style={styles.titleCourse}>{title}</Text>
-      <Text style={styles.nameCourse}>{name}</Text>
+      <Pressable onPress={selectedCourseItemHandler}>
+        <Image
+          source={{ uri: imageUrl }}
+          style={styles.image}
+          resizeMode="cover"
+        />
+        <View style={styles.topDetailContainer}>
+          <Text style={styles.topDetail}>{date}</Text>
+          <Text style={styles.topDetail}>{mitra}</Text>
+        </View>
+        <Text style={styles.titleCourse}>{title}</Text>
+        <Text style={styles.nameCourse}>{name}</Text>
+      </Pressable>
     </View>
   );
 }
@@ -18,7 +29,7 @@ export default Card;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    height: 'auto',
+    height: "auto",
     width: 160,
     backgroundColor: "white",
     elevation: 2,
@@ -27,12 +38,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 6,
     margin: 10,
-    overflow: 'hidden',
+    overflow: "hidden",
     borderRadius: 10,
   },
   image: {
     height: 150,
-    width: 'auto',
+    width: "auto",
   },
   topDetailContainer: {
     flexDirection: "row",
@@ -46,7 +57,7 @@ const styles = StyleSheet.create({
   titleCourse: {
     fontSize: 16,
     fontWeight: "bold",
-    padding : 5,
+    padding: 5,
   },
   nameCourse: {
     color: "#616161",

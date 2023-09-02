@@ -17,9 +17,6 @@ import CardContainer from "../components/cardContainer";
 import SearchBar from "../components/SearchBar";
 
 function Home() {
-  // function renderCardItem() {
-  //   return <Card />;
-  // }
   return (
     <View style={styles.container}>
       <View style={styles.HeaderContainer}>
