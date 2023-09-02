@@ -1,30 +1,26 @@
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import Card from "./card";
+import { COURSES } from "../data & models/data";
 
-function CardContainer({}) {
-  const courseId = route.params.courseId;
-
-  const displayedCourse = COURSE.filter((courseItem) => {
-    return courseItem.categoryIds.indexOf(courseId) >= 0;
-  });
-
+function CardContainer() {
   function renderCourseItem(itemData) {
-    const item = itemData.item;
-    const courseItemProps = {
-      date: item.date,
-      mitra: item.mitra,
-      title: item.title,
-      name: item.name,
-    };
-    return <Card {...courseItemProps} />;
+    return (
+      <Card
+      imageUrl={itemData.item.imageUrl}
+        title={itemData.item.title}
+        date={itemData.item.date}
+        name={itemData.item.name}
+        mitra={itemData.item.mitra}
+      />
+    );
   }
   return (
-    <FlatList
-      data={COURSE}
-      keyExtractor={(item) => item.id}
-      renderItem={renderCourseItem}
-      numColumns={2}
-    />
+      <FlatList
+        data={COURSES}
+        key={(item) => item.id}
+        renderItem={renderCourseItem}
+        numColumns={2}
+      />
   );
 }
 export default CardContainer;

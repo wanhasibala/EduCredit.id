@@ -61,6 +61,9 @@ function Home() {
         <View>
           <Filter />
         </View>
+        <View>
+          <CardContainer />
+        </View>
       </ScrollView>
     </View>
   );
@@ -89,6 +92,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
+    overflow: 'hidden'
   },
   bodyText: {
     fontSize: FontSize.TextLarge,

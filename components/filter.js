@@ -10,11 +10,14 @@ import Colors from "../constant/color";
 import FilterItem from "./filterItem";
 import { CATEGORIES } from "../data & models/data";
 
-function renderCategoryItem(itemData) {
-  return <FilterItem title={itemData.item.title} icons={itemData.item.icon} />;
-}
-
 function Filter() {
+  function renderCategoryItem(itemData) {
+    function pressHandler(){
+    }
+    return (
+      <FilterItem title={itemData.item.title} icons={itemData.item.icon} />
+    );
+  }
   return (
     <FlatList
       data={CATEGORIES}

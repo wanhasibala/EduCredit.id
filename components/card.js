@@ -4,16 +4,13 @@ import { useNavigation } from "@react-navigation/native";
 function Card({ title, imageUrl, date, mitra, name }) {
   return (
     <View style={styles.cardContainer}>
-        <Image
-          source={require("../assets/images/ilustrasi1.png")}
-          style={styles.imageContainer}
-        />
-        <View style={styles.topDetailContainer}>
-          <Text style={styles.topDetail}>{date}</Text>
-          <Text style={styles.topDetail}>{mitra}</Text>
-        </View>
-        <Text style={styles.titleCourse}>{title}</Text>
-        <Text style={styles.nameCourse}>{name}</Text>
+      <Image source={{ uri: imageUrl }} style={styles.image} resizeMode="cover" />
+      <View style={styles.topDetailContainer}>
+        <Text style={styles.topDetail}>{date}</Text>
+        <Text style={styles.topDetail}>{mitra}</Text>
+      </View>
+      <Text style={styles.titleCourse}>{title}</Text>
+      <Text style={styles.nameCourse}>{name}</Text>
     </View>
   );
 }
@@ -21,23 +18,26 @@ export default Card;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    height: 240,
-    width: 172,
+    height: 'auto',
+    width: 160,
     backgroundColor: "white",
-    padding: 10,
     elevation: 2,
     shadowColor: "#000",
     shadowOffset: { height: 2, width: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
+    margin: 10,
+    overflow: 'hidden',
+    borderRadius: 10,
   },
-  imageContainer: {
-    height: 146,
-    width: 152,
+  image: {
+    height: 150,
+    width: 'auto',
   },
   topDetailContainer: {
     flexDirection: "row",
     gap: 4,
+    padding: 5,
   },
   topDetail: {
     color: "#9e9e9e",
@@ -46,8 +46,10 @@ const styles = StyleSheet.create({
   titleCourse: {
     fontSize: 16,
     fontWeight: "bold",
+    padding : 5,
   },
   nameCourse: {
     color: "#616161",
+    padding: 5,
   },
 });
