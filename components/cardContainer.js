@@ -6,7 +6,7 @@ function CardContainer() {
   function renderCourseItem(itemData) {
     return (
       <Card
-      imageUrl={itemData.item.imageUrl}
+        imageUrl={itemData.item.imageUrl}
         title={itemData.item.title}
         date={itemData.item.date}
         name={itemData.item.name}
@@ -15,13 +15,12 @@ function CardContainer() {
     );
   }
   return (
-      <FlatList
-        data={COURSES}
-        key={(item) => item.id}
-        renderItem={renderCourseItem}
-        numColumns={2}
-      />
+    <FlatList
+      data={COURSES}
+      key={(item) => item.id}
+      renderItem={renderCourseItem}
+      numColumns={2}
+    />
   );
 }
 export default CardContainer;
-const styles = StyleSheet.create({});

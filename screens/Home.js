@@ -14,6 +14,7 @@ import Shortcut from "../components/Shortcut";
 import Filter from "../components/filter";
 import Card from "../components/card";
 import CardContainer from "../components/cardContainer";
+import SearchBar from "../components/SearchBar";
 
 function Home() {
   // function renderCardItem() {
@@ -23,7 +24,7 @@ function Home() {
     <View style={styles.container}>
       <View style={styles.HeaderContainer}>
         <HeaderTitle children={"Home"}></HeaderTitle>
-        <TextInput style={styles.TextInput} placeholder="Pencarian" />
+        <SearchBar />
       </View>
       <ScrollView style={styles.bodyContainer}>
         <Text style={styles.bodyText}>Penggunaan</Text>
@@ -58,12 +59,8 @@ function Home() {
           <Text style={styles.bodyText}>Popular</Text>
           <Text>Lihat semua</Text>
         </View>
-        <View>
-          <Filter />
-        </View>
-        <View>
-          <CardContainer />
-        </View>
+        <Filter />
+        <CardContainer />
       </ScrollView>
     </View>
   );
@@ -81,18 +78,13 @@ const styles = StyleSheet.create({
     padding: 24,
     justifyContent: "space-between",
   },
-  TextInput: {
-    backgroundColor: "white",
-    padding: 10,
-    borderRadius: 8,
-  },
   bodyContainer: {
     padding: 24,
     flexDirection: "column",
     backgroundColor: "white",
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
-    overflow: 'hidden'
+    paddingBottom: 20,
   },
   bodyText: {
     fontSize: FontSize.TextLarge,
