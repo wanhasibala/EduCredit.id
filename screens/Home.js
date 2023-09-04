@@ -1,26 +1,20 @@
-import {
-  FlatList,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import HeaderTitle from "../components/HeaderTitle";
 import FontSize from "../constant/fontSize";
-import Colors from "../constant/color";
 import Shortcut from "../components/Shortcut";
 import Filter from "../components/filter";
-import Card from "../components/card";
 import CardContainer from "../components/cardContainer";
 import SearchBar from "../components/SearchBar";
+import ProfilePicture from "../components/ProfilePicture";
 
 function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.HeaderContainer}>
-        <HeaderTitle children={"Home"}></HeaderTitle>
+        <View style={styles.headerTitle}>
+          <HeaderTitle children={"Home"}></HeaderTitle>
+          <ProfilePicture />
+        </View>
         <SearchBar />
       </View>
       <ScrollView style={styles.bodyContainer}>
@@ -57,7 +51,9 @@ function Home() {
           <Text>Lihat semua</Text>
         </View>
         <Filter />
-        <CardContainer />
+        <View>
+          <CardContainer />
+        </View>
       </ScrollView>
     </View>
   );
@@ -74,6 +70,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 24,
     justifyContent: "space-between",
+  },
+  headerTitle:{
+    flexDirection: 'row',
+    width: 'auto',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
   },
   bodyContainer: {
     padding: 24,
@@ -96,7 +99,7 @@ const styles = StyleSheet.create({
   },
   banner: {
     width: "100%",
-    height: 140,
+    height: 160,
     alignItems: "center",
     marginBottom: 10,
   },

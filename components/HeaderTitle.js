@@ -5,7 +5,6 @@ import FontSize from "../constant/fontSize";
 function HeaderTitle({children}) {
     return <View style={styles.titleHeader} >
         <Text style={styles.HeaderText} >{children}</Text>
-        <ProfilePicture />
     </View>
 }
 
@@ -13,10 +12,7 @@ export default HeaderTitle;
 
 const styles = StyleSheet.create({
     titleHeader: {
-        flexDirection: 'row',
-        alignItems: 'top',
-        justifyContent: 'space-between',
-        marginBottom: 40,
+        marginTop: 20,
     },
     HeaderText: {
         fontSize: FontSize.HeadingMedium,
